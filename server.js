@@ -7,6 +7,10 @@ var azure = require('azure');
 
 var serviceBusService = azure.createServiceBusService(process.env.AZURE_SERVICEBUS_CONNECTION_STRING);
 
+app.get('/', (req, res) => {
+    res.send('Service bus API running')
+})
+
 app.post('/', (req, res) => {
     var queueOptions = {
         MaxSizeInMegabytes: '5120',
